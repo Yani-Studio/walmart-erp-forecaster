@@ -17,7 +17,6 @@
 <div align="center">
   <img src="visualizations/03_Total_Sales_Trend.png" alt="M5 Total Sales Trend" width="100%" style="border-radius: 10px;">
 </div>
-<br/>
 
 월마트(Walmart)의 1,941일 치(약 4,700만 건) 시계열 데이터를 바탕으로, 각 상품의 **수요 발생 여부(Demand Occurrence)** 를 예측하는 엔터프라이즈 재고 최적화(ERP) 솔루션입니다. 
 
@@ -27,11 +26,11 @@
 
 ## 📈 2. 시계열 분석: 앙상블의 극대화된 예민도 (Time Series Analysis)
 
-동일한 평가지표로 채점되었음에도 두 모델의 예측 패턴은 완전히 다릅니다. 이는 타겟 인코딩과 시계열 트렌드 모델링을 통한 **예민도(Sensitivity) 파인튜닝** 덕분입니다.
-
 <div align="center">
-  <img src="visualizations/00_Actual_vs_Pred.png" width="80%">
+  <img src="visualizations/00_Actual_vs_Pred.png" width="100%">
 </div>
+
+동일한 평가지표로 채점되었음에도 두 모델의 예측 패턴은 완전히 다릅니다. 이는 타겟 인코딩과 시계열 트렌드 모델링을 통한 **예민도(Sensitivity) 파인튜닝** 덕분입니다.
 
 > **🔥 앙상블의 놀라운 Spike 추적 능력**
 > 단일 모델(LightGBM, 분홍색 점선)은 오차 페널티(RMSE)를 최소화하기 위해 안전한 평균값만 예측하는 **매우 보수적인 한계**를 보이며 실제 판매량의 급증(Spike)을 전혀 따라가지 못합니다. 
@@ -41,33 +40,48 @@
 
 ## 🏆 3. 핵심 비즈니스 성과 (Key Performance)
 
-재고 관리와 마케팅 기회 비용의 완벽한 밸런스를 찾는 것은 유통 AI의 궁극적인 목표입니다. 최종 앙상블 아키텍처는 베이스라인 모델(단일 최고 성능 트리 모델) 대비 단 하나의 지표도 희생하지 않고 **'정확도, 정밀도, 재현율, F1-Score 4가지 지표를 모두 상회'** 하는 기적적인 성능을 달성했습니다.
+재고 관리와 마케팅 기회 비용의 완벽한 밸런스를 찾는 것은 유통 AI의 궁극적인 목표입니다. 최종 앙상블 아키텍처는 베이스라인 모델(단일 최고 성능 트리 모델) 대비 단 하나의 지표도 희생하지 않고 기적적인 성능을 달성했습니다.
 
 <div align="center">
-  <img src="visualizations/07_Classification_Metrics_Comparison.png" width="48%">
-  <img src="visualizations/04_Hurdle_Confusion_Matrix.png" width="48%">
+  <img src="visualizations/07_Classification_Metrics_Comparison.png" width="90%">
 </div>
 
 > **💡 단일 1등 모델 전 지표 압살 (Success)**
 > 기존 앙상블 기법은 F1-Score나 정밀도 등 하나의 특화된 지표를 극대화하기 위해 필연적으로 다른 지표를 소폭 희생(Pareto Frontier)해야만 했습니다. 
-> 그러나 **최종 앙상블**은 '극한의 타겟 인코딩(Extreme Target Encoding)'을 거친 정예 모델들을 결합한 뒤, 수학적으로 모든 지표가 단일 최고 모델을 압도하는 **안정적인 예측 기댓값**을 산출했습니다. 그 결과 정밀도를 전혀 잃지 않으면서도 **재현율을 대폭 끌어올리며**, 최종 F1-Score를 역대 최고치 수준으로 갱신했습니다.
+> 그러나 **최종 앙상블**은 '극한의 타겟 인코딩'을 거친 정예 모델들을 결합한 뒤, 수학적으로 모든 지표가 단일 최고 모델을 압도하는 안정적인 예측 기댓값을 산출했습니다. 그 결과 정밀도를 전혀 잃지 않으면서도 **재현율을 대폭 끌어올리며**, 최종 F1-Score를 역대 최고치 수준으로 갱신했습니다.
+
+<br>
+
+<div align="center">
+  <img src="visualizations/04_Hurdle_Confusion_Matrix.png" width="70%">
+</div>
+
+> **🔎 하드보팅(Hard Voting) 혼동 행렬 분석**
+> 앙상블 모델의 구체적인 분류 성과를 혼동 행렬(Confusion Matrix)로 살펴보면, 실제로 수요가 발생한 날(Actual True)을 정확히 맞춰내는 민감도(Recall)가 크게 향상되었음을 알 수 있습니다. 이는 유통 현장에서 품절(Out-of-Stock)로 인한 기회 비용 상실을 완벽히 방어해내는 핵심 지표입니다.
 
 ---
 
 ## 🏗️ 4. 모델 아키텍처 및 데이터 구조 (Architecture & Data Structure)
 
-단순한 머신러닝의 한계를 넘어, 고도화된 피처 엔지니어링과 가벼우면서도 치명적인 딥러닝 결합을 활용한 최첨단 아키텍처를 설계했습니다.
+<div align="center">
+  <img src="visualizations/01_M5_SQL_ERD.png" width="90%">
+</div>
+
+**Walmart 데이터베이스 스키마 (SQL ERD)**
+Walmart ERP 시스템의 팩트(Fact) 테이블과 캘린더, 가격 정보가 1:N 관계로 조인(Join)되는 전형적인 Star Schema 데이터베이스 구조(위 ERD 참고)를 기반으로 거대한 변수들을 집계했습니다.
+
+<br>
 
 <div align="center">
-  <img src="visualizations/02_Model_Architecture.png" width="48%">
-  <img src="visualizations/01_M5_SQL_ERD.png" width="48%">
+  <img src="visualizations/02_Model_Architecture.png" width="100%">
 </div>
+
+단순한 머신러닝의 한계를 넘어, 고도화된 피처 엔지니어링과 가벼우면서도 치명적인 딥러닝 결합을 활용한 최첨단 파이프라인 아키텍처를 설계했습니다.
 
 1. **Extreme Target Encoding (극한의 피처 엔지니어링)**
    - `dept_wday_mean`: 카테고리별/요일별 기준 판매 확률.
    - `item_event_mean`: 상품별 특수 이벤트(슈퍼볼, 추수감사절 등) 폭발적 판매 확률.
    - 타겟 누수(Data Leakage)를 완벽히 통제한 상태로, 딥러닝 모델에게 '강력한 정답의 힌트'를 피처로 쥐여주어 기초 체력(AUC)을 극대화했습니다.
-   - Walmart ERP 시스템의 팩트(Fact) 테이블과 캘린더, 가격 정보가 1:N 관계로 조인(Join)되는 전형적인 Star Schema 데이터베이스 구조(우측 ERD 참고)를 기반으로 변수들을 집계했습니다.
 
 2. **Lightweight Hybrid Training & Memory Optimization**
    - 가장 성능이 뛰어난 트리 모델(`HistGradientBoosting` 등)과 딥러닝 시계열 모델(`LSTM, GRU, 1D-CNN`)만을 엄선하여 훈련 속도를 획기적으로 단축(15분 내외)했습니다.
@@ -80,14 +94,23 @@
 어떤 모델들이 결합되어 이 놀라운 성과를 내었는지, 그리고 실제 월마트 10개 매장(Store)별로 오차율(RMSE)이 어떻게 나타나는지 확인합니다.
 
 <div align="center">
-  <img src="visualizations/06_Ensemble_Composition_Donut.png" width="48%">
-  <img src="visualizations/05_Store_RMSE_Ranking.png" width="48%">
+  <img src="visualizations/06_Ensemble_Composition_Donut.png" width="70%">
 </div>
 
-최종 아키텍처는 속도와 성능을 동시에 잡기 위해 군더더기를 덜어내고, 최고의 시너지 효과를 내는 Tabular 머신러닝 트리 3개와 PyTorch 딥러닝 3개의 완벽한 5:5 가중치 밸런스로 구성되었습니다. 매장별 오차율(RMSE) 또한 특정 매장에 치우치지 않고 매우 균일하고 안정적인 성능을 입증하고 있습니다.
+**최종 정예 6개 모델 가중치 분배 비율**
+최종 아키텍처는 속도와 성능을 동시에 잡기 위해 군더더기를 덜어내고, 최고의 시너지 효과를 내는 Tabular 머신러닝 트리 3개와 PyTorch 딥러닝 3개의 완벽한 5:5 가중치 밸런스로 구성되었습니다. 
 
 > **💡 목적 함수 다각화 (Loss Function Blending)**
-> 단순히 알고리즘만 섞은 것이 아닙니다. 트리 모델 학습 시, 일반적인 `RMSE` 손실 함수로 학습한 모델(안정적 기댓값)과 Zero-inflated 데이터에 특화된 `Tweedie` 손실 함수로 학습한 모델(극단적 스파이크 감지)의 예측값을 결합하여 서로의 단점을 상호 보완하는 **메타 앙상블(Meta-Ensemble)** 기법을 적용했습니다.
+> 단순히 알고리즘만 섞은 것이 아닙니다. 트리 모델 학습 시, 일반적인 `RMSE` 손실 함수로 학습한 모델(안정적 기댓값)과 Zero-inflated 데이터에 특화된 `TThreshold/Tweedie` 손실 함수로 학습한 모델(극단적 스파이크 감지)의 예측값을 결합하여 서로의 단점을 상호 보완하는 **메타 앙상블(Meta-Ensemble)** 기법을 적용했습니다.
+
+<br>
+
+<div align="center">
+  <img src="visualizations/05_Store_RMSE_Ranking.png" width="90%">
+</div>
+
+**매장별 오차율(RMSE) 랭킹 및 안정성 평가**
+최종 메타 앙상블 모델은 특정 매장에 치우치지 않고 CA, TX, WI 모든 매장에서 매우 균일하고 안정적인 성능(RMSE)을 보여줍니다. 이는 지역적 특성이나 매장 규모의 차이에 흔들리지 않는 일반화 성능(Generalization)을 입증합니다.
 
 ---
 
