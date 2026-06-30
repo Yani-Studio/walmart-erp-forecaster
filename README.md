@@ -1,7 +1,4 @@
 <div align="center">
-  <!-- 대표 배너 이미지 (시계열 분석 시각화 활용) -->
-  <img src="visualizations/03_Total_Sales_Trend.png" alt="M5 Forecasting Banner" width="100%" style="border-radius: 10px;">
-  
   <h1>🛒 Walmart ERP Forecaster <br><span style="font-size:0.7em; color:#4B0082;">(Deep Time-Series & Tabular Tree Hybrid Ensemble)</span></h1>
   <p><b>Walmart 4,700만 시계열 데이터 한계 돌파: 딥러닝 시계열과 머신러닝 트리의 궁극적인 하이브리드 앙상블 아키텍처</b></p>
   
@@ -16,13 +13,33 @@
 <br/>
 
 ## 📖 1. 프로젝트 개요 (Overview)
+
+<div align="center">
+  <img src="visualizations/03_Total_Sales_Trend.png" alt="M5 Total Sales Trend" width="100%" style="border-radius: 10px;">
+</div>
+<br/>
+
 월마트(Walmart)의 1,941일 치(약 4,700만 건) 시계열 데이터를 바탕으로, 각 상품의 **수요 발생 여부(Demand Occurrence)** 를 예측하는 엔터프라이즈 재고 최적화(ERP) 솔루션입니다. 
 
 상품이 며칠에 한 번씩만 팔리는 **희소한 수요(Intermittent Demand)** 와 80% 이상이 0으로 가득 찬 **Zero-inflated** 문제를 완벽하게 통제하기 위해, "이 상품이 오늘 팔릴 것인가?(Classification)"와 "팔린다면 몇 개가 팔릴 것인가?(Regression)"를 분리하여 예측하는 **Two-Stage Hurdle 모델 아키텍처**를 도입했습니다. 여기에 전통적인 횡단면 트리 머신러닝 모델과 시퀀스(시간 흐름)를 기억하는 **PyTorch 딥러닝 시계열 모델(LSTM, GRU, 1D-CNN)** 을 하이브리드로 결합했습니다. 나아가 총 53개의 모델 중 최고 성능을 내는 조합을 찾기 위해 **앙상블 전수조사(Exhaustive Ensemble Search)** 를 수행하여 성능의 한계치를 돌파했습니다.
 
 ---
 
-## 🏆 2. 핵심 비즈니스 성과 (Key Performance)
+## 📈 2. 시계열 분석: 앙상블의 극대화된 예민도 (Time Series Analysis)
+
+동일한 평가지표로 채점되었음에도 두 모델의 예측 패턴은 완전히 다릅니다. 이는 타겟 인코딩과 시계열 트렌드 모델링을 통한 **예민도(Sensitivity) 파인튜닝** 덕분입니다.
+
+<div align="center">
+  <img src="visualizations/00_Actual_vs_Pred.png" width="80%">
+</div>
+
+> **🔥 앙상블의 놀라운 Spike 추적 능력**
+> 단일 모델(LightGBM, 분홍색 점선)은 오차 페널티(RMSE)를 최소화하기 위해 안전한 평균값만 예측하는 **매우 보수적인 한계**를 보이며 실제 판매량의 급증(Spike)을 전혀 따라가지 못합니다. 
+> 반면, **최종 앙상블(진보라색 실선)**은 딥러닝과 타겟 인코딩의 시너지를 통해 **예민도(Sensitivity)를 한계까지 끌어올리도록 파인튜닝**되었습니다. 그 결과, 3개, 5개씩 갑자기 팔리는 불확실한 수요 급증 구간에서도 몸을 사리지 않고 실제 판매량을 기가 막히게 추적하는 놀라운 핏(Fit)을 완성했습니다.
+
+---
+
+## 🏆 3. 핵심 비즈니스 성과 (Key Performance)
 
 재고 관리와 마케팅 기회 비용의 완벽한 밸런스를 찾는 것은 유통 AI의 궁극적인 목표입니다. 최종 앙상블 아키텍처는 베이스라인 모델(단일 최고 성능 트리 모델) 대비 단 하나의 지표도 희생하지 않고 **'정확도, 정밀도, 재현율, F1-Score 4가지 지표를 모두 상회'** 하는 기적적인 성능을 달성했습니다.
 
@@ -37,7 +54,7 @@
 
 ---
 
-## 🏗️ 3. 모델 아키텍처 및 데이터 구조 (Architecture & Data Structure)
+## 🏗️ 4. 모델 아키텍처 및 데이터 구조 (Architecture & Data Structure)
 
 단순한 머신러닝의 한계를 넘어, 고도화된 피처 엔지니어링과 가벼우면서도 치명적인 딥러닝 결합을 활용한 최첨단 아키텍처를 설계했습니다.
 
@@ -55,20 +72,6 @@
 2. **Lightweight Hybrid Training & Memory Optimization**
    - 가장 성능이 뛰어난 트리 모델(`HistGradientBoosting` 등)과 딥러닝 시계열 모델(`LSTM, GRU, 1D-CNN`)만을 엄선하여 훈련 속도를 획기적으로 단축(15분 내외)했습니다.
    - 특히 4,700만 건의 데이터를 딥러닝용 3차원 텐서(`Samples, 28, Features`)로 변환할 때 발생하는 막대한 RAM 메모리 폭발 현상을 방지하기 위해, Numpy의 `sliding_window_view`를 활용한 **Zero-copy 메모리 뷰 벡터화 연산**을 적용하여 OOM(Out Of Memory) 없이 쾌적한 학습 파이프라인을 구축했습니다.
-
----
-
-## 📈 4. 시계열 분석: 앙상블의 극대화된 예민도 (Time Series Analysis)
-
-동일한 평가지표로 채점되었음에도 두 모델의 예측 패턴은 완전히 다릅니다. 이는 타겟 인코딩과 시계열 트렌드 모델링을 통한 **예민도(Sensitivity) 파인튜닝** 덕분입니다.
-
-<div align="center">
-  <img src="visualizations/00_Actual_vs_Pred.png" width="80%">
-</div>
-
-> **🔥 앙상블의 놀라운 Spike 추적 능력**
-> 단일 모델(LightGBM, 분홍색 점선)은 오차 페널티(RMSE)를 최소화하기 위해 안전한 평균값만 예측하는 **매우 보수적인 한계**를 보이며 실제 판매량의 급증(Spike)을 전혀 따라가지 못합니다. 
-> 반면, **최종 앙상블(진보라색 실선)**은 딥러닝과 타겟 인코딩의 시너지를 통해 **예민도(Sensitivity)를 한계까지 끌어올리도록 파인튜닝**되었습니다. 그 결과, 3개, 5개씩 갑자기 팔리는 불확실한 수요 급증 구간에서도 몸을 사리지 않고 실제 판매량을 기가 막히게 추적하는 놀라운 핏(Fit)을 완성했습니다.
 
 ---
 
