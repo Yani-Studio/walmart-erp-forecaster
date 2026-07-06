@@ -11,8 +11,9 @@
 </div>
 
 
->⚠️ Copyright Notice
->Copyright (c) 2026 Kang Gyu Min. All rights reserved.
+---
+> ⚠️ Copyright Notice Copyright (c) 2026 Kang Gyu Min. All rights reserved.
+---
 <br/>
 
 
