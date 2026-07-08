@@ -10,14 +10,39 @@
   </p>
 </div>
 
-
 ---
 > ⚠️ Copyright Notice Copyright (c) 2026 Kang Gyu Min. All rights reserved.
 ---
 <br/>
 
+## 🚀 1. Business Impact & ERP Automation (Command Center)
 
-## 📖 1. Project Overview
+The ultimate goal of this project goes beyond algorithmic accuracy. It translates AI performance directly into **Tangible Financial Outcomes** and seamlessly integrates with Enterprise ERP systems.
+
+<div align="center">
+  <video src="visualizations/09_Command_Center_Demo.mp4" width="100%" controls autoplay loop></video>
+</div>
+
+> **💻 Live Walmart AI-ERP Command Center**
+> This real-time web dashboard acts as the central monitoring system. The AI engine's nightly forecasts are automatically pushed to the Odoo ERP system via XML-RPC API, dynamically updating the **Safety Stock** for each product. This creates an end-to-end automated procurement pipeline.
+
+<br>
+
+## 💰 2. Financial Translation of RMSE ($634,380 Net Savings)
+
+<div align="center">
+  <img src="visualizations/08_Financial_Impact_ROI.png" width="90%">
+</div>
+
+> **🔥 $634,380 Cost Reduction Achieved**
+> Our prediction errors are mathematically converted into real-world financial metrics (`scripts/finance.py`). Compared to a highly-optimized single LightGBM baseline, our **Ultimate Meta-Ensemble** aggressively captures sudden demand spikes while preventing over-forecasting.
+> - **OPEX Savings (Storage)**: $251,604.55 saved by minimizing excess inventory.
+> - **P&L Savings (Missed Sales)**: $382,775.91 recovered by preventing Out-of-Stock situations.
+> - **Final Net Financial Impact**: A staggering **$634,380.46** in annual savings for the enterprise.
+
+---
+
+## 📖 3. Project Overview
 
 <div align="center">
   <img src="visualizations/03_Total_Sales_Trend.png" alt="M5 Total Sales Trend" width="100%" style="border-radius: 10px;">
@@ -29,7 +54,7 @@ To perfectly control the **Intermittent Demand** and the **Zero-inflated** natur
 
 ---
 
-## 📈 2. Time Series Analysis: Maximized Sensitivity of the Ensemble
+## 📈 4. Time Series Analysis: Maximized Sensitivity of the Ensemble
 
 <div align="center">
   <img src="visualizations/00_Actual_vs_Pred.png" width="100%">
@@ -43,7 +68,7 @@ Although scored by the same evaluation metrics, the prediction patterns of the t
 
 ---
 
-## 🏆 3. Key Business Performance
+## 🏆 5. Key Business Performance (Algorithm Evaluation)
 
 Finding the perfect balance between inventory management and marketing opportunity cost is the ultimate goal of retail AI. The final ensemble architecture achieved miraculous performance by **outperforming the top single tree baseline model across all four metrics: Accuracy, Precision, Recall, and F1-Score**, without sacrificing a single one.
 
@@ -66,7 +91,7 @@ Finding the perfect balance between inventory management and marketing opportuni
 
 ---
 
-## 🏗️ 4. Model Architecture & Data Structure
+## 🏗️ 6. Model Architecture & Data Structure
 
 <div align="center">
   <img src="visualizations/01_M5_SQL_ERD.png" width="90%">
@@ -94,7 +119,7 @@ Beyond the limitations of simple machine learning, we designed a cutting-edge pi
 
 ---
 
-## 📊 5. Ensemble Composition & RMSE Evaluation by Store
+## 📊 7. Ensemble Composition & RMSE Evaluation by Store
 
 Let's examine which models were combined to achieve this remarkable performance, and how the Error Rate (RMSE) manifests across the 10 actual Walmart stores.
 
@@ -119,7 +144,7 @@ The final meta-ensemble model shows highly uniform and stable performance (RMSE)
 
 ---
 
-## 🔗 6. References
+## 🔗 8. References
 
 This project was researched and developed based on the following state-of-the-art frameworks, papers, and open datasets.
 
