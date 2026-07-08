@@ -1,4 +1,7 @@
 <div align="center">
+  <video src="visualizations/09_Command_Center_Demo.mp4" width="100%" controls autoplay loop></video>
+  <br/>
+  
   <h1>🛒 Walmart ERP Forecaster <br><span style="font-size:0.7em; color:#4B0082;">(Deep Time-Series & Tabular Tree Hybrid Ensemble)</span></h1>
   <p><b>Breaking the Limits of 47M Walmart Time-Series Data: The Ultimate Hybrid Ensemble Architecture of Deep Learning and Machine Learning Trees</b></p>
   
@@ -18,10 +21,6 @@
 ## 🚀 1. Business Impact & ERP Automation (Command Center)
 
 The ultimate goal of this project goes beyond algorithmic accuracy. It translates AI performance directly into **Tangible Financial Outcomes** and seamlessly integrates with Enterprise ERP systems.
-
-<div align="center">
-  <video src="visualizations/09_Command_Center_Demo.mp4" width="100%" controls autoplay loop></video>
-</div>
 
 > **💻 Live Walmart AI-ERP Command Center**
 > This real-time web dashboard acts as the central monitoring system. The AI engine's nightly forecasts are automatically pushed to the Odoo ERP system via XML-RPC API, dynamically updating the **Safety Stock** for each product. This creates an end-to-end automated procurement pipeline.
@@ -153,4 +152,5 @@ This project was researched and developed based on the following state-of-the-ar
 * **Tabular ML Framework**: [scikit-learn](https://scikit-learn.org/stable/modules/ensemble.html#histogram-based-gradient-boosting) (`HistGradientBoosting`), [LightGBM](https://lightgbm.readthedocs.io/)
 * **Parallel Processing**: [Joblib](https://joblib.readthedocs.io/) (`joblib.Parallel` for multiprocessing)
 * **Time-Series Vectorization**: [NumPy Sliding Window View](https://numpy.org/doc/stable/reference/generated/numpy.lib.stride_tricks.sliding_window_view.html) (Memory optimization technique applied)
+
 
