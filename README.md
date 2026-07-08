@@ -1,5 +1,5 @@
-<div>
-  
+<div align="center">
+  <video src="visualizations/09_Command_Center_Demo.mp4" width="100%" controls autoplay loop muted playsinline></video>
   <br/>
   
   <h1>🛒 Walmart ERP Forecaster <br><span style="font-size:0.7em; color:#4B0082;">(Deep Time-Series & Tabular Tree Hybrid Ensemble)</span></h1>
@@ -11,9 +11,6 @@
     <a href="https://lightgbm.readthedocs.io/"><img src="https://img.shields.io/badge/LightGBM-0080FF?style=for-the-badge&logo=lightgbm&logoColor=white" alt="LightGBM"></a>
     <a href="https://pandas.pydata.org/"><img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas"></a>
   </p>
-  
-  <align="center">
-  <video src="visualizations/09_Command_Center_Demo.mp4" width="100%" controls autoplay loop muted playsinline></video>
 </div>
 
 ---
