@@ -1,10 +1,4 @@
 <div align="center">
-
-https://github.com/Yani-Studio/walmart-erp-forecaster/raw/main/visualizations/09_Command_Center_Demo.mp4
-
-</div>
-
-<div align="center">
   
   <h1>🛒 Walmart ERP Forecaster <br><span style="font-size:0.7em; color:#4B0082;">(Deep Time-Series & Tabular Tree Hybrid Ensemble)</span></h1>
   <p><b>Breaking the Limits of 47M Walmart Time-Series Data: The Ultimate Hybrid Ensemble Architecture of Deep Learning and Machine Learning Trees</b></p>
@@ -20,6 +14,13 @@ https://github.com/Yani-Studio/walmart-erp-forecaster/raw/main/visualizations/09
 ---
 > ⚠️ Copyright Notice Copyright (c) 2026 Kang Gyu Min. All rights reserved.
 ---
+
+<div align="center">
+
+https://github.com/Yani-Studio/walmart-erp-forecaster/raw/main/visualizations/09_Command_Center_Demo.mp4
+
+</div>
+
 <br/>
 
 ## 🚀 1. Business Impact & ERP Automation (Command Center)
@@ -156,6 +157,5 @@ This project was researched and developed based on the following state-of-the-ar
 * **Tabular ML Framework**: [scikit-learn](https://scikit-learn.org/stable/modules/ensemble.html#histogram-based-gradient-boosting) (`HistGradientBoosting`), [LightGBM](https://lightgbm.readthedocs.io/)
 * **Parallel Processing**: [Joblib](https://joblib.readthedocs.io/) (`joblib.Parallel` for multiprocessing)
 * **Time-Series Vectorization**: [NumPy Sliding Window View](https://numpy.org/doc/stable/reference/generated/numpy.lib.stride_tricks.sliding_window_view.html) (Memory optimization technique applied)
-
 
 
