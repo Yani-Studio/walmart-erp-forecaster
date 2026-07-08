@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walmart AI-ERP Command Center</title>
+    <!-- Google Fonts for Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header Section -->
+        <header class="glass-panel main-header">
+            <div class="logo-area">
+                <div class="walmart-logo">
+                    <svg class="walmart-spark" width="36" height="36" viewBox="0 0 100 100">
+                        <g fill="#FFC220">
+                            <rect x="42" y="5" width="16" height="26" rx="8" />
+                            <rect x="42" y="5" width="16" height="26" rx="8" transform="rotate(60 50 50)" />
+                            <rect x="42" y="5" width="16" height="26" rx="8" transform="rotate(120 50 50)" />
+                            <rect x="42" y="5" width="16" height="26" rx="8" transform="rotate(180 50 50)" />
+                            <rect x="42" y="5" width="16" height="26" rx="8" transform="rotate(240 50 50)" />
+                            <rect x="42" y="5" width="16" height="26" rx="8" transform="rotate(300 50 50)" />
+                        </g>
+                    </svg>
+                </div>
+                <h1>Walmart AI-ERP <span>Command Center</span></h1>
+            </div>
+            <div class="status-area">
+                <div class="status-indicator online">System Online</div>
+            </div>
+        </header>
+
+        <!-- KPI Grid -->
+        <section class="kpi-grid">
+            <div class="glass-panel kpi-card opex-card">
+                <h3>OPEX Savings (Storage)</h3>
+                <div class="kpi-value">$<span class="counter" data-target="251604.55">0</span></div>
+                <div class="kpi-trend positive">↓ -67.4% Excess Inventory</div>
+            </div>
+            <div class="glass-panel kpi-card pnl-card">
+                <h3>P&L Savings (Out-of-Stock)</h3>
+                <div class="kpi-value">$<span class="counter" data-target="382775.91">0</span></div>
+                <div class="kpi-trend positive">↓ -10.2% Missed Sales</div>
+            </div>
+            <div class="glass-panel kpi-card total-card">
+                <h3>Net Financial Impact</h3>
+                <div class="kpi-value">$<span class="counter" data-target="634380.46">0</span></div>
+                <div class="kpi-trend pulse-text">Ultimate Meta-Ensemble</div>
+            </div>
+        </section>
+
+        <!-- Main Dashboard Content -->
+        <main class="dashboard-main">
+            <!-- Left Column: Visuals -->
+            <div class="left-col glass-panel">
+                <div class="section-header">
+                    <h2>Demand Spike Tracking (Sensitivity)</h2>
+                    <span class="badge">Model: Two-Stage Hurdle</span>
+                </div>
+                <div class="chart-container">
+                    <img src="../../visualizations/00_Actual_vs_Pred.png" alt="Actual vs Predicted Time Series" class="showcase-img">
+                </div>
+                <div class="chart-caption">
+                    <p>The <b>Solid Purple Line (AI)</b> demonstrates extreme sensitivity, perfectly tracking the highly irregular zero-inflated spikes in actual sales (white bars), completely outperforming traditional conservative baselines.</p>
+                </div>
+            </div>
+
+            <!-- Right Column: Live ERP Terminal -->
+            <div class="right-col glass-panel">
+                <div class="section-header">
+                    <h2>Live ERP Synchronization</h2>
+                    <span class="badge erp-badge">Odoo XML-RPC</span>
+                </div>
+                <div class="terminal-window" id="terminal-window">
+                    <div class="terminal-content" id="terminal-content">
+                        <!-- Logs will be injected here via JS -->
+                    </div>
+                </div>
+                <div class="terminal-footer">
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="sync-progress"></div>
+                    </div>
+                    <div class="sync-status">Pushing Safety Stock Triggers...</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="real_data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
