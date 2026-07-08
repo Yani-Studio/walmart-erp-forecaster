@@ -1,6 +1,4 @@
-<div align="center">
-  
-  ![Command Center Demo](visualizations/09_Command_Center_Demo.mp4)
+<div>
   
   <br/>
   
@@ -13,6 +11,9 @@
     <a href="https://lightgbm.readthedocs.io/"><img src="https://img.shields.io/badge/LightGBM-0080FF?style=for-the-badge&logo=lightgbm&logoColor=white" alt="LightGBM"></a>
     <a href="https://pandas.pydata.org/"><img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas"></a>
   </p>
+  
+  <align="center">
+  <video src="visualizations/09_Command_Center_Demo.mp4" width="100%" controls autoplay loop muted playsinline></video>
 </div>
 
 ---
@@ -154,5 +155,6 @@ This project was researched and developed based on the following state-of-the-ar
 * **Tabular ML Framework**: [scikit-learn](https://scikit-learn.org/stable/modules/ensemble.html#histogram-based-gradient-boosting) (`HistGradientBoosting`), [LightGBM](https://lightgbm.readthedocs.io/)
 * **Parallel Processing**: [Joblib](https://joblib.readthedocs.io/) (`joblib.Parallel` for multiprocessing)
 * **Time-Series Vectorization**: [NumPy Sliding Window View](https://numpy.org/doc/stable/reference/generated/numpy.lib.stride_tricks.sliding_window_view.html) (Memory optimization technique applied)
+
 
 
