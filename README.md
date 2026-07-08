@@ -1,5 +1,7 @@
 <div align="center">
-  <video src="visualizations/09_Command_Center_Demo.mp4" width="100%" controls autoplay loop></video>
+  
+  ![Command Center Demo](visualizations/09_Command_Center_Demo.mp4)
+  
   <br/>
   
   <h1>🛒 Walmart ERP Forecaster <br><span style="font-size:0.7em; color:#4B0082;">(Deep Time-Series & Tabular Tree Hybrid Ensemble)</span></h1>
