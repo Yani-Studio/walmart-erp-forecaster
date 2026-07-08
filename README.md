@@ -1,12 +1,6 @@
-
-
-https://github.com/user-attachments/assets/0512f394-6081-4880-92ce-6fcbc6d215f0
-
-
-
 <div align="center">
   
-  <h1>🛒 Walmart ERP Forecaster <br><span style="font-size:0.7em; color:#4B0082;">(Deep Time-Series & Tabular Tree Hybrid Ensemble)</span></h1>
+  <h1>🛒 Walmart AI-ERP Forecaster & Financial ROI Engine<br><span style="font-size:0.7em; color:#4B0082;">(Deep Time-Series & Tabular Tree Hybrid Ensemble for Profit Maximization)</span></h1>
   <p><b>Breaking the Limits of 47M Walmart Time-Series Data: The Ultimate Hybrid Ensemble Architecture of Deep Learning and Machine Learning Trees</b></p>
   
   <p>
@@ -22,7 +16,9 @@ https://github.com/user-attachments/assets/0512f394-6081-4880-92ce-6fcbc6d215f0
 ---
 
 <div align="center">
-  <video src="https://github.com/Yani-Studio/walmart-erp-forecaster/raw/main/visualizations/09_Command_Center_Demo.mp4" width="100%" controls autoplay loop muted playsinline></video>
+
+https://github.com/user-attachments/assets/0512f394-6081-4880-92ce-6fcbc6d215f0
+
 </div>
 
 <br/>
