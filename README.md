@@ -16,9 +16,7 @@
 ---
 
 <div align="center">
-
-![Command Center Demo](https://github.com/Yani-Studio/walmart-erp-forecaster/raw/main/visualizations/09_Command_Center_Demo.mp4)
-
+  <video src="https://github.com/Yani-Studio/walmart-erp-forecaster/raw/main/visualizations/09_Command_Center_Demo.mp4" width="100%" controls autoplay loop muted playsinline></video>
 </div>
 
 <br/>
