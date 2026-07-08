@@ -15,11 +15,6 @@
 > ⚠️ Copyright Notice Copyright (c) 2026 Kang Gyu Min. All rights reserved.
 ---
 
-<div align="center">
-
-https://github.com/user-attachments/assets/0512f394-6081-4880-92ce-6fcbc6d215f0
-
-</div>
 
 <br/>
 
@@ -29,6 +24,12 @@ The ultimate goal of this project goes beyond algorithmic accuracy. It translate
 
 > **💻 Live Walmart AI-ERP Command Center**
 > This real-time web dashboard acts as the central monitoring system. The AI engine's nightly forecasts are automatically pushed to the Odoo ERP system via XML-RPC API, dynamically updating the **Safety Stock** for each product. This creates an end-to-end automated procurement pipeline.
+
+<div align="center">
+
+https://github.com/user-attachments/assets/0512f394-6081-4880-92ce-6fcbc6d215f0
+
+</div>
 
 <br>
 
