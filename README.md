@@ -17,7 +17,7 @@
 
 <div align="center">
 
-https://github.com/Yani-Studio/walmart-erp-forecaster/raw/main/visualizations/09_Command_Center_Demo.mp4
+![Command Center Demo](https://github.com/Yani-Studio/walmart-erp-forecaster/raw/main/visualizations/09_Command_Center_Demo.mp4)
 
 </div>
 
